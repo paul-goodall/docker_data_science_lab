@@ -1,0 +1,11 @@
+FROM dsl_part11
+
+ARG docker_stamp
+ARG docker_file
+RUN mkdir -p /Dockerfiles
+COPY $docker_file /Dockerfiles/$docker_stamp
+
+COPY magic_installs /magic_installs
+RUN chmod -R 755 /magic_installs/install_magictools.sh
+
+RUN /magic_installs/install_magictools.sh

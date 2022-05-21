@@ -1,0 +1,10 @@
+FROM dsl_part02
+
+RUN chmod -R 755 /rocker_scripts
+
+ARG docker_stamp
+ARG docker_file
+RUN mkdir -p /Dockerfiles
+COPY $docker_file /Dockerfiles/$docker_stamp
+
+RUN /rocker_scripts/install_python.sh

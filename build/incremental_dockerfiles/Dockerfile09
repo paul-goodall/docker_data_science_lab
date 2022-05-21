@@ -1,0 +1,11 @@
+FROM dsl_part08
+
+COPY scripts /rocker_scripts
+RUN chmod -R 755 /rocker_scripts
+
+ARG docker_stamp
+ARG docker_file
+RUN mkdir -p /Dockerfiles
+COPY $docker_file /Dockerfiles/$docker_stamp
+
+RUN /rocker_scripts/install_geospatial_part1.sh
