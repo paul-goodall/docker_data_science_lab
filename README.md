@@ -29,8 +29,8 @@ Open a terminal and follow the commands below:
 - Make the script executable:  `chmod 755 run_ddsl.sh`
 - Run the Data Science Lab `./run_ddsl.sh`
 
-To stop the container when your session is finished:
-- `docker container stop data_science_lab; docker container prune -f`
+When your session is finished:
+- Stop the data science lab container: `docker container stop data_science_lab; docker container prune -f`
 
 ## Win usage:
 
