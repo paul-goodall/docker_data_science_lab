@@ -14,12 +14,19 @@ The ingredients for building this image and tailoring for your own use is in the
 - [optional] for macintosh: `brew install socat` if you'd like to make use of x11win forwarding between the container and your mac.
 - [optional] for windows: (x11 support tbc - any tips please submit pull requests)
 
-Running the scripts below with create a use a local directory called `magic_home` in the current directory of this cloned repo, as a common fileshare between the local machine and the docker container.  If the `magic_home` directory already exists, it will be treated as a resumed session, otherwise it will be created.
+## Notes on getting started
+
+- download the [run_ddsl.sh](https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/run_ddsl.sh) file. (or just do `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/run_ddsl.sh`)
+- move the `run_ddsl.sh` file to wherever you wish to mount the Ubuntu home (the default behaviour is that a new folder `rstudio/` will be created in the same directory as the `run_ddsl.sh` file, and mapped to `/home/rstudio` in the container.  You can change this behaviour by editing the file before running, specifically the variables `local_magic_home` and/or `local_magic_path`)
+- on the first running, the `rstudio/` folder (or whatever you changed it to) is created and the session is treated as a fresh start.  If the folder `rstudio/` already exists, it will assume you are resuming from a previous session, with all the relevant settings (and dotfiles etc) from your home dir.
+- Only the `/home/rstudio` folder in the container is persisted and mapped with your local machine, everything else is ephemeral.
 
 ## Mac usage:
 
 Open a terminal and run:
 `./run_ddsl.sh`
+
+(You may need to change the permissions of `run_ddsl.sh` before running to make it executable:  `chmod 755 run_ddsl.sh`)
 
 ## Win usage:
 
