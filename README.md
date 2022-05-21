@@ -41,7 +41,6 @@ Open a Command Prompt and follow the commands below:
 
 When your session is finished:
 - Stop the data science lab container: `docker container stop data_science_lab; docker container prune -f`
-- 
 
 
 ## Data Science Tools that ship with this container:
