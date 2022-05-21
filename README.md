@@ -23,10 +23,14 @@ The ingredients for building this image and tailoring for your own use is in the
 
 ## Mac usage:
 
-Open a terminal and run:
-`./run_ddsl.sh`
+Open a terminal and follow the commands below:
 
-(You may need to change the permissions of `run_ddsl.sh` before running to make it executable:  `chmod 755 run_ddsl.sh`)
+- Check the script to ensure you are happy with the default behaviour, or ammend as required
+- Make the script executable:  `chmod 755 run_ddsl.sh`
+- Run the Data Science Lab `./run_ddsl.sh`
+
+To stop the container when your session is finished:
+- `docker container stop data_science_lab; docker container prune -f`
 
 ## Win usage:
 
