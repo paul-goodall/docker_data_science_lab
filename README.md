@@ -54,7 +54,8 @@ The below has the following options / disclaimers:
 - YOUR_LOCAL_MOUNT_PATH = e.g. `$HOME/rstudio` or `C:\...\Documents\...\rstudio` (or whatever you wish to mount it)
 - DISABLE_AUTH ==> applies to the rstudio-server login.  See [rocker](https://github.com/rocker-org/rocker) if you prefer to set a password. 
 
-`docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
+```
+docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
               --name data_science_lab \
               -e HOST_OS="mac" \
               -e "YOUR_MACHINE_IP:0" \
@@ -62,7 +63,8 @@ The below has the following options / disclaimers:
               -e FRESH_START="yes" \
               -v "YOUR_LOCAL_MOUNT_PATH:/Volumes/Abyss/rstudio" \
               -e DISABLE_AUTH=true \
-              goodsy/docker_data_science_lab:latest`
+              goodsy/docker_data_science_lab:latest
+```
 
 ## Data Science Tools that ship with this container:
 
