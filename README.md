@@ -4,12 +4,10 @@ Running the scripts below with create a use a local directory called `magic_home
 
 ## Mac usage:
 
-`bash go_mac_dsl.sh`
+Open a terminal and run:
+`./run_ddsl.sh`
 
 ## Win usage:
 
-Double click on the `go_windows_dsl.cmd` file.
-# docker_science_lab
-# docker_data_science_lab
-# docker_data_science_lab
-# docker_data_science_lab
+Open a Command Prompt and run:
+`sh run_ddsl.sh`
