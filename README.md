@@ -21,6 +21,8 @@ The ingredients for building this image and tailoring for your own use is in the
 - on the first running, the `rstudio/` folder (or whatever you changed it to) is created and the session is treated as a fresh start.  If the folder `rstudio/` already exists, it will assume you are resuming from a previous session, with all the relevant settings (and dotfiles etc) from your home dir.
 - Only the `/home/rstudio` folder in the container is persisted and mapped with your local machine, everything else is ephemeral.
 
+The first usage may take a few mins to download the image (~6GB).
+
 ## Mac usage:
 
 Open a Terminal and follow the commands below:
