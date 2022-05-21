@@ -32,3 +32,6 @@ Open a terminal and run:
 
 Open a Command Prompt and run:
 `sh run_ddsl.sh`
+
+## Data Science Tools that ship with this container:
+
