@@ -23,7 +23,7 @@ The ingredients for building this image and tailoring for your own use is in the
 
 ## Mac usage:
 
-Open a terminal and follow the commands below:
+Open a Terminal and follow the commands below:
 
 - Check the script to ensure you are happy with the default behaviour, or ammend as required
 - Make the script executable:  `chmod 755 run_ddsl.sh`
@@ -34,8 +34,15 @@ When your session is finished:
 
 ## Win usage:
 
-Open a Command Prompt and run:
-`sh run_ddsl.sh`
+Open a Command Prompt and follow the commands below:
+- Check the script to ensure you are happy with the default behaviour, or ammend as required
+- Make the script executable:  `chmod 755 run_ddsl.sh`
+- Run the Data Science Lab `sh run_ddsl.sh`
+
+When your session is finished:
+- Stop the data science lab container: `docker container stop data_science_lab; docker container prune -f`
+- 
+
 
 ## Data Science Tools that ship with this container:
 
