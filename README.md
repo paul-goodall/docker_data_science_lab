@@ -30,7 +30,7 @@ Open a Terminal and follow the commands below:
 - Run the Data Science Lab `./run_ddsl.sh`
 
 When your session is finished:
-- Stop the data science lab container: `docker container stop data_science_lab; docker container prune -f`
+- Stop the data science lab: `docker container stop data_science_lab; docker container prune -f`
 
 ## Win usage:
 
@@ -40,7 +40,7 @@ Open a Command Prompt and follow the commands below:
 - Run the Data Science Lab `sh run_ddsl.sh`
 
 When your session is finished:
-- Stop the data science lab container: `docker container stop data_science_lab; docker container prune -f`
+- Stop the data science lab: `docker container stop data_science_lab; docker container prune -f`
 
 
 ## Data Science Tools that ship with this container:
