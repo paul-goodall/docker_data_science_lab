@@ -23,6 +23,7 @@ sudo su - -c "R -e \"IRkernel::installspec(user = FALSE)\""
 
 # Install the latest version of Ghostscript
 cd /magic_installs
+cat ghostscript-9.56.1.tar.gz.part* > ghostscript-9.56.1.tar.gz
 gunzip ghostscript-9.56.1.tar.gz
 tar -xvf ghostscript-9.56.1.tar
 cd ghostscript-9.56.1

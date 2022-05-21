@@ -1,0 +1,7 @@
+
+# You split the tarball with:
+# split -b 45M ghostscript-9.56.1.tar.gz "ghostscript-9.56.1.tar.gz.part"
+
+
+# You must recombine with:
+# cat ghostscript-9.56.1.tar.gz.part* > ghostscript-9.56.1.tar.gz
