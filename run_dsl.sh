@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # ===================================
-docker_magic_home="/Volumes/Abyss/rstudio"
 local_magic_home="rstudio"
 # Leave local_magic_path blank to default to: CWD/local_magic_home
 # else set it to a full path to override
@@ -52,7 +51,8 @@ else
     mkdir "$local_magic_path"
 fi
 
-
+# docker_magic_home cannot be changed here - it needs to match DOCKER_MAGIC_DIR from the icing dockerfile.
+docker_magic_home="/Volumes/Abyss/rstudio"
 volume_string="${local_magic_path}:${docker_magic_home}"
 
 echo "SETUP:
@@ -70,4 +70,4 @@ docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
               -e FRESH_START="$fresh_start" \
               -v ${volume_string} \
               -e DISABLE_AUTH=true \
-              goodsy/data_science_lab:u20_r420_202205
+              goodsy/docker_data_science_lab:latest

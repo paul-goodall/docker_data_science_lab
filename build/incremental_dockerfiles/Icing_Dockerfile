@@ -5,8 +5,7 @@ ARG docker_file
 RUN mkdir -p /Dockerfiles
 COPY $docker_file /Dockerfiles/$docker_stamp
 
-
-
+ENV DOCKER_MAGIC_DIR=/Volumes/Abyss/rstudio
 
 # ===========================
 
@@ -21,7 +20,7 @@ COPY magic_installs/00_runcom /00_runcom
 RUN chmod -R 777 /00_runcom
 
 RUN rm -rf /home/rstudio
-RUN ln -s /Volumes/Abyss/magic_home /home/rstudio
+RUN ln -s $DOCKER_MAGIC_DIR /home/rstudio
 
 COPY magic_installs/jupyter_notebook_config.json /jupyter_notebook_config.json
 RUN chmod -R 777 jupyter_notebook_config.json
