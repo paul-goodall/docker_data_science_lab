@@ -1,4 +1,4 @@
-FROM dsl_part08
+FROM ddsl_part08
 
 COPY scripts /rocker_scripts
 RUN chmod -R 755 /rocker_scripts

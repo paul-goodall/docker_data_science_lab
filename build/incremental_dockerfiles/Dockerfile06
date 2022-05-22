@@ -1,4 +1,4 @@
-FROM dsl_part05
+FROM ddsl_part05
 
 RUN chmod -R 755 /rocker_scripts
 

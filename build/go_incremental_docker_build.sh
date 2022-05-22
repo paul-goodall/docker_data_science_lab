@@ -10,7 +10,7 @@ do
   printf -v ii "%02d" $i
 
   dockerfile_name="${DfDir}/Dockerfile${ii}"
-  image_name="dsl_part${ii}"
+  image_name="ddsl_part${ii}"
   docker_stamp="Dockerfile_$(date +%Y.%m.%d-%H.%M.%S)"
   my_com="docker build -f $dockerfile_name --build-arg docker_stamp=$docker_stamp --build-arg docker_file=$dockerfile_name -t $image_name ."
   echo "$my_com"

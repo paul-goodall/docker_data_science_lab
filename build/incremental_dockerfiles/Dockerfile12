@@ -1,4 +1,4 @@
-FROM dsl_part11
+FROM ddsl_part11
 
 ARG docker_stamp
 ARG docker_file

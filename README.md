@@ -4,7 +4,7 @@ This project was created for data science consultants who are often victims of m
 
 The amazing [rocker](https://github.com/rocker-org/rocker) stack forms the basis of the images here, with a bunch of bespoke additional Unix tools thrown in to put the icing on the cake.  Visit [rocker-project.org](https://rocker-project.org) for more about available Rocker images, configuration, and use.
 
-To run the data science lab, only the `run_ddsl.sh` script is actually needed, as it will pull the image from DockerHub.
+To run the data science lab, only the `*run_ddsl.sh` script is actually needed, as it will pull the image from DockerHub.
 
 The ingredients for building this image and tailoring for your own use is in the `build/` directory, but I would recommend going directly to the [rocker](https://github.com/rocker-org/rocker) repo as a more reliable source of truth.
 
@@ -16,9 +16,9 @@ The ingredients for building this image and tailoring for your own use is in the
 
 ## Notes on getting started
 
-- the easiest usage is via the `run_ddsl.sh` script, but if you wish to run manually, see "Simple usage" below.
+- the easiest usage is via the `*run_ddsl.sh` script, but if you wish to run manually, see "Simple usage" below.
 - download the [run_ddsl.sh](https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/run_ddsl.sh) file. (or just do `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/run_ddsl.sh`)
-- move the `run_ddsl.sh` file to wherever you wish to mount the Ubuntu home (the default behaviour is that a new folder `rstudio/` will be created in the same directory as the `run_ddsl.sh` file, and mapped to `/home/rstudio` in the container.  You can change this behaviour by editing the file before running, specifically the variables `local_magic_home` and/or `local_magic_path`)
+- move the `*run_ddsl.sh` file to wherever you wish to mount the Ubuntu home (the default behaviour is that a new folder `rstudio/` will be created in the same directory as the `*run_ddsl.sh` file, and mapped to `/home/rstudio` in the container.  You can change this behaviour by editing the file before running, specifically the variables `local_magic_home` and/or `local_magic_path`)
 - on the first running, the `rstudio/` folder (or whatever you changed it to) is created and the session is treated as a fresh start.  If the folder `rstudio/` already exists, it will assume you are resuming from a previous session, with all the relevant settings (and dotfiles etc) from your home dir.
 - Only the `/home/rstudio` folder in the container is persisted and mapped with your local machine, everything else is ephemeral.
 
@@ -52,7 +52,7 @@ The below has the following options / disclaimers:
 - YOUR_MACHINE_IP - this is only really needed to enable x11 support
 - MAGIC_FOLDER ==> This cannot be changed here (would need to rebuild the image).  Will be removed as an argument in future builds
 - YOUR_LOCAL_MOUNT_PATH = e.g. `$HOME/rstudio` or `C:\...\Documents\...\rstudio` (or whatever you wish to mount it)
-- DISABLE_AUTH ==> applies to the rstudio-server login.  See [rocker](https://github.com/rocker-org/rocker) if you prefer to set a password. 
+- DISABLE_AUTH ==> applies to the rstudio-server login.  See [rocker](https://github.com/rocker-org/rocker) if you prefer to set a password.
 
 ```
 docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
@@ -67,4 +67,3 @@ docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
 ```
 
 ## Data Science Tools that ship with this container:
-

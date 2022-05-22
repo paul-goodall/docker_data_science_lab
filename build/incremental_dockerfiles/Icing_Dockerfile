@@ -1,4 +1,4 @@
-FROM goodsy/dsl_cake:u20_r420_202205
+FROM goodsy/ddsl_cake:latest
 
 ARG docker_stamp
 ARG docker_file
