@@ -29,8 +29,8 @@ The first usage may take a few mins to download the image (~6GB).
 Open a Terminal and follow the commands below:
 
 - Check the script to ensure you are happy with the default behaviour, or ammend as required
-- Make the script executable:  `chmod 755 run_ddsl.sh`
-- Run the Data Science Lab `./run_ddsl.sh`
+- Make the script executable:  `chmod 755 mac_run_ddsl.sh`
+- Run the Data Science Lab `./mac_run_ddsl.sh`
 
 When your session is finished:
 - Stop the data science lab: `docker container stop data_science_lab; docker container prune -f`
@@ -39,8 +39,8 @@ When your session is finished:
 
 Open a Command Prompt and follow the commands below:
 - Check the script to ensure you are happy with the default behaviour, or ammend as required
-- Make the script executable:  `chmod 755 run_ddsl.sh`
-- Run the Data Science Lab `sh run_ddsl.sh`
+- Make the script executable:  `chmod 755 win_run_ddsl.bat`
+- Run the Data Science Lab `win_run_ddsl.bat`
 
 When your session is finished:
 - Stop the data science lab: `docker container stop data_science_lab; docker container prune -f`
