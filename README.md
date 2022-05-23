@@ -28,9 +28,16 @@ The first usage may take a few mins to download the image (~6GB).
 
 Open a Terminal and follow the commands below:
 
-- Check the script to ensure you are happy with the default behaviour, or ammend as required
+- Check the script to ensure you are happy with the default behaviour, or amend as required
 - Make the script executable:  `chmod 755 mac_run_ddsl.sh`
 - Run the Data Science Lab `./mac_run_ddsl.sh`
+
+Once running, you can connect to the Docker Data Science lab through any of the following methods:
+- `ssh -XY rstudio@localhost -p 2222` - the default password is "password" but you can change this during docker run by editing the `run_ddsl` script
+- `http://localhost:8787` - Rstudio server  (A convenient browser-based IDE for running and testing R+Python code)
+- `http://localhost:3838` - R Shiny server  (For hosting the apps you develop)
+- `http://localhost:8888` - Jupyter notebooks  (Excellent for documentation of your code)
+
 
 When your session is finished:
 - Stop the data science lab: `docker container stop data_science_lab; docker container prune -f`
@@ -38,7 +45,7 @@ When your session is finished:
 ## Win usage:
 
 Open a Command Prompt and follow the commands below:
-- Check the script to ensure you are happy with the default behaviour, or ammend as required
+- Check the script to ensure you are happy with the default behaviour, or amend as required
 - Make the script executable:  `chmod 755 win_run_ddsl.bat`
 - Run the Data Science Lab `win_run_ddsl.bat`
 

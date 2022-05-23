@@ -2,55 +2,36 @@
 
 echo "================ Entering magic_init.sh ================"
 
-# Must create this if it doesn't exist.  The default jupyter notebooks password is 'jupyter'
-if [ ! -d "/home/${DEFAULT_USER}/.jupyter" ] || [ "$FRESH_START" == "yes" ]
-then
-  com="mkdir -p /home/${DEFAULT_USER}/.jupyter"
-  echo "$com"
-  eval "$com"
-  com="cp /jupyter_notebook_config.json /home/${DEFAULT_USER}/.jupyter/jupyter_notebook_config.json"
-  echo "$com"
-  eval "$com"
-  com="chmod -R 777 /home/${DEFAULT_USER}"
-  echo "$com"
-  eval "$com"
-else
-    echo "Running as a resumed session."
-fi
+
+cp -rT /magic_installs/rstudio /home/${DEFAULT_USER}/.
+cp -rf /magic_installs/rstudio/.bashrc /home/${DEFAULT_USER}/.
+cp -rf /magic_installs/rstudio/.bash_logout /home/${DEFAULT_USER}/.
+cp -rf /magic_installs/rstudio/.profile /home/${DEFAULT_USER}/.
+cp -rf /magic_installs/rstudio/.jupyter /home/${DEFAULT_USER}/.
+
+chmod -R 777 $DOCKER_MAGIC_DIR/
 
 # Shiny server examples setup
-if [ ! -d "/home/${DEFAULT_USER}/shiny-server" ]
+rm -rf /srv/shiny-server
+ln -s /home/${DEFAULT_USER}/shiny-apps /srv/shiny-server
+chmod -R 777 /srv
+
+chmod -R 777 /home/${DEFAULT_USER}
+
+#/magic_installs/run_iperl.sh
+cd ${MAGIC_FOLDER}
+su $DEFAULT_USER -c '/opt/venv/reticulate/bin/jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root &'
+#su $DEFAULT_USER -c '/magic_installs/run_iperl.sh &'
+
+if [ -z ${USER_PASSWORD+x} ]
 then
-    mv -f /srv/shiny-server /home/${DEFAULT_USER}/.
+  echo "User password not changed."
 else
-    rm -rf /srv/shiny-server
+  echo "Updating User password."
+  echo "${DEFAULT_USER}:${USER_PASSWORD}" | chpasswd
 fi
-com="ln -s /home/${DEFAULT_USER}/shiny-server /srv/shiny-server"
-echo "$com"
-eval "$com"
-com="chmod -R 777 /srv"
-echo "$com"
-eval "$com"
 
-com="cp -rf /00_runcom /home/${DEFAULT_USER}/shiny-server/."
-echo "$com"
-eval "$com"
-
-com="cp /dot_files/.bashrc /dot_files/.bash_logout /dot_files/.profile /home/${DEFAULT_USER}/."
-echo "$com"
-eval "$com"
-
-com="chmod -R 777 /home/${DEFAULT_USER}"
-echo "$com"
-eval "$com"
-
-com="cd ${MAGIC_FOLDER}"
-echo "$com"
-eval "$com"
-
-com="su $DEFAULT_USER -c '/opt/venv/reticulate/bin/jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root &'"
-echo "$com"
-eval "$com"
+service ssh restart
 
 echo "================ Finished magic_init.sh ================"
 #nohup /init > /home/${DEFAULT_USER}/nohup.log &

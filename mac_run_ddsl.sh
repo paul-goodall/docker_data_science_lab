@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # ===================================
+user_password="password"
 local_magic_home="rstudio"
 # Leave local_magic_path blank to default to: CWD/local_magic_home
 # else set it to a full path to override
@@ -53,10 +54,17 @@ docker_magic_home = [${docker_magic_home}]
 fresh_start = [${fresh_start}]
 "
 
-docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
+open -a XQuartz
+xhost + $(hostname)
+#DISPLAY=$(hostname):0
+#DISPLAY="${local_ip}:0"
+#-v /tmp/.X11-unix:/tmp/.X11-unix \
+
+docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 -p 2222:22 \
               --name data_science_lab \
               -e HOST_OS="mac" \
-              -e "${local_ip}:0" \
+              -e USER_PASSWORD=$user_password \
+              -e DISPLAY=$(hostname):0 \
               -e MAGIC_FOLDER="${docker_magic_home}" \
               -e FRESH_START="$fresh_start" \
               -v ${volume_string} \

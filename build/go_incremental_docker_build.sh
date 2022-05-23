@@ -2,8 +2,8 @@
 
 DfDir="incremental_dockerfiles"
 
-i1=11
-i2=12
+i1=15
+i2=15
 
 for (( i=$i1; i<=$i2; i++ ));
 do
@@ -17,3 +17,7 @@ do
   ${my_com}
 
 done
+
+printf -v ii "%02d" $i2
+image_name="ddsl_part${ii}:latest"
+docker tag $image_name goodsy/ddsl_cake:latest

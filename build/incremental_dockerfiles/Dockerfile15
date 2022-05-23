@@ -1,0 +1,11 @@
+FROM ddsl_part14
+
+ARG docker_stamp
+ARG docker_file
+RUN mkdir -p /Dockerfiles
+COPY $docker_file /Dockerfiles/$docker_stamp
+
+COPY magic_installs /magic_installs
+RUN chmod -R 755 /magic_installs
+
+RUN /magic_installs/install_pdl_modules.sh
