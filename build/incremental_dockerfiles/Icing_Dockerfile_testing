@@ -2,12 +2,11 @@ FROM goodsy/ddsl_cake:testing
 
 # ===========================
 
-COPY magic_installs/my.cnf /etc/mysql/my.cnf
 
-RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
-RUN echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
-RUN mysql_secure_installation
+RUN rm /magic_installs/rstudio/shiny-apps/examples/index.html
+RUN rm -rf /magic_installs/rstudio/shiny-apps/examples/sample-apps
 
-RUN mysql -u root -p -e 'USE mysql; UPDATE `user` SET `Host`="%" WHERE `User`="root" AND `Host`="localhost"; DELETE FROM `user` WHERE `Host` != "%" AND `User`="root"; FLUSH PRIVILEGES;'
+RUN rm /home/rstudio/shiny-apps/examples/index.html
+RUN rm -rf /home/rstudio/shiny-apps/examples/sample-apps
 
 # ===========================

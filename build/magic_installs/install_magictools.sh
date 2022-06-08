@@ -28,6 +28,7 @@ sudo su - -c "R -e \"IRkernel::installspec(user = FALSE)\""
 
 pip3 install octave_kernel
 pip3 install bash_kernel
+python3 -m bash_kernel.install
 
 # Install the latest version of Ghostscript
 cd /magic_installs
