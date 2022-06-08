@@ -5,7 +5,7 @@ ARG docker_file
 RUN mkdir -p /Dockerfiles
 COPY $docker_file /Dockerfiles/$docker_stamp
 
-COPY magic_installs /magic_installs
+COPY magic_installs/install_pdl.sh /magic_installs/install_pdl.sh
 RUN chmod -R 755 /magic_installs
 
 RUN /magic_installs/install_pdl.sh

@@ -9,7 +9,7 @@ PERL_MM_USE_DEFAULT=1
 # ===========================
 
 #cpan PDL
-apt-get install -y pdl
+apt-get install -y pdl --install-recommends --install-suggests --install-enhances
 
 # ===========================
 # Old version: Minimal Install PDL with PGPLOT and OpenGL for 3D:

@@ -17,12 +17,6 @@ cpanm Parallel::Simple
 cpanm Term::ProgressBar
 cpanm -v PDL::Graphics::Simple --notest
 cpan Warnings
-
-cpanm PDL::IO::HDF5
-cpanm Astro::Time
-cpanm Parallel::Simple
-cpanm Term::ProgressBar
-cpanm -v PDL::Graphics::Simple --notest
 cpan warnings
 cpanm --notest Astro::FITS::Header
 cpan ExtUtils::F77

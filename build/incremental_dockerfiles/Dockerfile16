@@ -1,0 +1,18 @@
+FROM ddsl_part15
+
+ARG docker_stamp
+ARG docker_file
+RUN mkdir -p /Dockerfiles
+COPY $docker_file /Dockerfiles/$docker_stamp
+
+
+# ===============================
+# This must happen BEFORE you begin creating databases:
+RUN mkdir -p /Volumes/Abyss
+RUN chmod -R 777 /Volumes
+# ===============================
+
+COPY magic_installs/install_postgresql.sh /magic_installs/install_postgresql.sh
+RUN chmod 755 /magic_installs/install_postgresql.sh
+
+RUN /magic_installs/install_postgresql.sh

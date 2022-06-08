@@ -31,7 +31,19 @@ else
   echo "${DEFAULT_USER}:${USER_PASSWORD}" | chpasswd
 fi
 
+# Start ssh
 service ssh restart
+
+# deal with postgres:
+postgres_data_dir_old="/var/lib/postgresql"
+data_dir_new="/Volumes/Abyss/rstudio/system_data"
+postgres_data_dir_new="${data_dir_new}/postgresql"
+service postgresql stop
+sleep 1
+[ ! -d "$postgres_data_dir_new" ] && mv -f ${postgres_data_dir_old} ${data_dir_new}/.
+rm -rf ${postgres_data_dir_old}
+ln -s ${postgres_data_dir_new} ${postgres_data_dir_old}
+service postgresql restart
 
 echo "================ Finished magic_init.sh ================"
 #nohup /init > /home/${DEFAULT_USER}/nohup.log &
