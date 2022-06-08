@@ -1,0 +1,5 @@
+1653284551740:setwd("~/gle/example01")
+1653284648034:setwd("~/gle/example01")
+1653284648842:com <- "gle -d pdf example01.gle"
+1653284650746:system(com, intern = T)
+1653284673709:source("/Volumes/Abyss/rstudio/gle/example01/run_example.R")

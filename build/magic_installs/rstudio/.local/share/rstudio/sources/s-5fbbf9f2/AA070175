@@ -1,0 +1,26 @@
+{
+    "id": "AA070175",
+    "path": "~/gle/example01/example01.gle",
+    "project_path": null,
+    "type": "text",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1653284524757.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "182,32",
+        "scrollLine": "178"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1653284669,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1653284669580,
+    "read_only": false,
+    "read_only_alternatives": []
+}

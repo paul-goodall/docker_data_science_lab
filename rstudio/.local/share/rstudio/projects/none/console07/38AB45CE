@@ -1,0 +1,48 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+]0;/Volumes/Abyss/rstudio/gle/example01]0;rstudio@ae436b268dca: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@ae436b268dca[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ ls ~/.
+./             .bash_history  .bashrc        .DS_Store      .jupyter/      .profile       
+../            .bash_logout   .config/       .ipython/      .local/        .pyenv/        
+]0;rstudio@ae436b268dca: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@ae436b268dca[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ ls ~/.local/share/
+jupyter/ rstudio/ 
+]0;rstudio@ae436b268dca: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@ae436b268dca[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ ls ~/.local/share/jupyter/
+kernels/         nbsignatures.db  notebook_secret  runtime/         
+]0;rstudio@ae436b268dca: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@ae436b268dca[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ ls ~/.local/share/jupyter/kernels/iperl/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Krstudio/
+addin_registry       history_database     persistent-state     projects/            rversion-settings/   tutorial/            
+bibliography-index/  monitored/           presentation/        projects_settings/   sessions/            
+ctx/                 notebooks/           profiles-cache/      rstudio-server.json  sources/             
+]0;/Volumes/Abyss/rstudio/gle/example01]0;rstudio@0ec4e2e98536: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@0ec4e2e98536[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ more /home/[K[K[K[K[K
+bin/            Dockerfiles/    lib/            libx32/         opt/            run/            tmp/            
+boot/           etc/            lib32/          magic_installs/ proc/           sbin/           usr/            
+dev/            home/           lib64/          media/          rocker_scripts/ srv/            var/            
+.dockerenv      init            libexec/        mnt/            root/           sys/            Volumes/        
+]0;rstudio@0ec4e2e98536: /Volumes/Abyss/rstudio/gle/example01[01;32mrstudio@0ec4e2e98536[00m:[01;34m/Volumes/Abyss/rstudio/gle/example01[00m$ more /Dockerfiles/Dockerfile_2022.05.2[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[1P /Dockerfiles/[1P /Dockerfiles/[1P /Dockerfiles/[1P /Dockerfiles/c /Dockerfiles/d /Dockerfiles/
+]0;/Dockerfiles]0;rstudio@0ec4e2e98536: /Dockerfiles[01;32mrstudio@0ec4e2e98536[00m:[01;34m/Dockerfiles[00m$ ls
+Dockerfile_2022.05.23-19.03.49  Dockerfile_2022.05.23-19.18.11  Dockerfile_2022.05.23-19.53.18  Dockerfile_2022.05.24-19.05.00
+Dockerfile_2022.05.23-19.03.52  Dockerfile_2022.05.23-19.35.30  Dockerfile_2022.05.23-22.12.47  Dockerfile_2022.05.24-19.05.58
+Dockerfile_2022.05.23-19.16.02  Dockerfile_2022.05.23-19.40.15  Dockerfile_2022.05.23-23.05.59
+Dockerfile_2022.05.23-19.17.23  Dockerfile_2022.05.23-19.40.54  Dockerfile_2022.05.23-23.31.58
+Dockerfile_2022.05.23-19.18.09  Dockerfile_2022.05.23-19.46.36  Dockerfile_2022.05.23-23.58.45
+]0;/Dockerfiles]0;rstudio@0ec4e2e98536: /Dockerfiles[01;32mrstudio@0ec4e2e98536[00m:[01;34m/Dockerfiles[00m$ ll
+total 76
+drwxr-xr-x 1 root root 4096 May 24 09:06 [0m[01;34m.[0m/
+drwxr-xr-x 1 root root 4096 Jun  1 03:27 [01;34m..[0m/
+-rw-r--r-- 1 root root 1434 May  9 07:42 Dockerfile_2022.05.23-19.03.49
+-rw-r--r-- 1 root root  228 May 22 03:30 Dockerfile_2022.05.23-19.03.52
+-rw-r--r-- 1 root root  195 May 22 03:30 Dockerfile_2022.05.23-19.16.02
+-rw-r--r-- 1 root root  196 May 22 03:30 Dockerfile_2022.05.23-19.17.23
+-rw-r--r-- 1 root root  195 May 22 03:30 Dockerfile_2022.05.23-19.18.09
+-rw-r--r-- 1 root root  198 May 22 03:30 Dockerfile_2022.05.23-19.18.11
+-rw-r--r-- 1 root root  194 May 22 03:30 Dockerfile_2022.05.23-19.35.30
+-rw-r--r-- 1 root root  195 May 22 03:30 Dockerfile_2022.05.23-19.40.15
+-rw-r--r-- 1 root root  234 May 22 03:30 Dockerfile_2022.05.23-19.40.54
+-rw-r--r-- 1 root root  234 May 22 03:30 Dockerfile_2022.05.23-19.46.36
+-rw-r--r-- 1 root root  201 May 22 03:30 Dockerfile_2022.05.23-19.53.18
+-rw-r--r-- 1 root root  257 May 23 09:03 Dockerfile_2022.05.23-22.12.47
+-rw-r--r-- 1 root root  242 May 23 13:05 Dockerfile_2022.05.23-23.05.59
+-rw-r--r-- 1 root root  228 May 23 13:05 Dockerfile_2022.05.23-23.31.58
+-rw-r--r-- 1 root root  236 May 23 13:42 Dockerfile_2022.05.23-23.58.45
+-rw-r--r-- 1 root root  478 May 24 06:16 Dockerfile_2022.05.24-19.05.00
+-rw-r--r-- 1 root root  850 May 24 05:04 Dockerfile_2022.05.24-19.05.58
+]0;/Dockerfiles]0;rstudio@0ec4e2e98536: /Dockerfiles[01;32mrstudio@0ec4e2e98536[00m:[01;34m/Dockerfiles[00m$ 
