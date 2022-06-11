@@ -11,6 +11,11 @@ cp -rf /magic_installs/rstudio/.jupyter /home/${DEFAULT_USER}/.
 
 chmod -R 777 $DOCKER_MAGIC_DIR/
 
+# Get the latest ddsl_content if it doesn't exist:
+ddsl_dir="/Volumes/Abyss/rstudio/ddsl_content"
+[ ! -d "$ddsl_dir" ] && mv -f ${postgres_data_dir_old} ${data_dir_new}/.
+#
+
 # Shiny server examples setup
 rm -rf /srv/shiny-server
 ln -s /home/${DEFAULT_USER}/shiny-apps /srv/shiny-server
