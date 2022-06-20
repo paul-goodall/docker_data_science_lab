@@ -9,9 +9,12 @@ ENV DOCKER_MAGIC_DIR=/Volumes/Abyss/rstudio
 
 RUN echo "root:root" | chpasswd
 
+RUN python3 -m bash_kernel.install
+
 RUN mkdir -p /Volumes/Abyss
 RUN chmod -R 777 /Volumes
 
+RUN rm -rf /magic_installs
 COPY magic_installs /magic_installs
 RUN chmod -R 777 /magic_installs
 RUN cp /magic_installs/magic_init.sh /root/magic_init.sh

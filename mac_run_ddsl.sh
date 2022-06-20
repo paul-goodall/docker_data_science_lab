@@ -60,6 +60,9 @@ xhost + $(hostname)
 #DISPLAY="${local_ip}:0"
 #-v /tmp/.X11-unix:/tmp/.X11-unix \
 
+docker container stop data_science_lab
+docker container prune -f
+
 docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 -p 2222:22 \
               --name data_science_lab \
               -e HOST_OS="mac" \
@@ -70,3 +73,7 @@ docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 -p 2222:22 \
               -v ${volume_string} \
               -e DISABLE_AUTH=true \
               goodsy/docker_data_science_lab:latest
+
+echo "Getting things set up... one moment ..."
+sleep 5
+open http://localhost:3838/shiny-apps/

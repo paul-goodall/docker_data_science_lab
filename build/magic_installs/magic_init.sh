@@ -13,12 +13,13 @@ chmod -R 777 $DOCKER_MAGIC_DIR/
 
 # Get the latest ddsl_content if it doesn't exist:
 ddsl_dir="/Volumes/Abyss/rstudio/ddsl_content"
-[ ! -d "$ddsl_dir" ] && mv -f ${postgres_data_dir_old} ${data_dir_new}/.
+[ ! -d "$ddsl_dir" ] && git clone https://github.com/paul-goodall/ddsl_content.git $ddsl_dir
 #
 
 # Shiny server examples setup
-rm -rf /srv/shiny-server
-ln -s /home/${DEFAULT_USER}/shiny-apps /srv/shiny-server
+rm -rf /srv/shiny-server/*
+ln -s /home/${DEFAULT_USER}/ddsl_content/shiny-apps /srv/shiny-server/.
+ln -s /home/${DEFAULT_USER}/my_work/my_shiny_apps /srv/shiny-server/.
 chmod -R 777 /srv
 
 chmod -R 777 /home/${DEFAULT_USER}
