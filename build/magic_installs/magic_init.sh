@@ -51,6 +51,12 @@ rm -rf ${postgres_data_dir_old}
 ln -s ${postgres_data_dir_new} ${postgres_data_dir_old}
 service postgresql restart
 
+# Run init-script with long timeout - and make it run in the background
+/opt/mssql-tools/bin/sqlcmd -S localhost -l 60 -U SA -P ${MSSQL_SA_PASSWORD} -i magic_installs/init_ms_sql.sql &
+# Start SQL server
+/opt/mssql/bin/sqlservr &
+
+
 echo "================ Finished magic_init.sh ================"
 #nohup /init > /home/${DEFAULT_USER}/nohup.log &
 /init
