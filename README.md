@@ -12,7 +12,8 @@ The ingredients for building this image and tailoring for your own use is in the
 
 - Install docker (that's it!)
 
-[optional]
+## Optional installs
+
 If you'd like to use x11win from the Ubuntu container, you'll need to make sure the host also can support it:
 
 For macintosh: 
