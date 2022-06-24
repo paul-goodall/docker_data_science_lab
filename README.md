@@ -2,6 +2,7 @@
 
 ### 0.0 - TOC:
 
+- 0.0 - TOC (recursive error)
 - 1.0 - Intro / About DDSL
 - 2.0 - Setup
 - 3.0 - Running DDSL
