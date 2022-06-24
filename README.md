@@ -14,9 +14,11 @@ The ingredients for building this image and tailoring for your own use is in the
 
 [optional]
 If you'd like to use x11win from the Ubuntu container, you'll need to make sure the host also can support it:
+
 For macintosh: 
 - Install XQuartz (and enable network connections in preferences - first time only)
 - Install the window manager: `brew install socat`
+
 For windows:
 - Install the x11 support and display manager: `choco install vcxsrv`  (or see vcxsrv webpage if you don't use choco packaga manager for windows)
 
