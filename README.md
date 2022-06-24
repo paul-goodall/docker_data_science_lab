@@ -42,10 +42,13 @@ To run the image (as-is) - you only need the relevant run-script for mac or wind
 
 Open a Terminal and follow the commands below:
 
-- Download the mac run script: `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/mac_run_ddsl.sh`
-- Inspect the script to ensure you are happy with the default behaviour/settings, or amend as required (see section 3.5 - About the run scripts)
-- Make the script executable:  `chmod 755 mac_run_ddsl.sh`
-- Run the Data Science Lab `./mac_run_ddsl.sh`
+i) Download the mac run script: 
+- `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/mac_run_ddsl.sh`
+ii) Inspect the script to ensure you are happy with the default behaviour/settings, or amend as required (see section 3.5 - About the run scripts)
+iii) Make the script executable:  
+- `chmod 755 mac_run_ddsl.sh`
+iv) Run the Data Science Lab
+- `./mac_run_ddsl.sh`
 
 ### 3.2 - Win usage:
 
