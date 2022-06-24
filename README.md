@@ -42,13 +42,13 @@ To run the image (as-is) - you only need the relevant run-script for mac or wind
 
 Open a Terminal and follow the commands below:
 
-i) Download the mac run script: 
-- `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/mac_run_ddsl.sh`
-ii) Inspect the script to ensure you are happy with the default behaviour/settings, or amend as required (see section 3.5 - About the run scripts)
-iii) Make the script executable:  
-- `chmod 755 mac_run_ddsl.sh`
-iv) Run the Data Science Lab
-- `./mac_run_ddsl.sh`
+- Download the mac run script: 
+  - `wget https://raw.githubusercontent.com/paul-goodall/docker_data_science_lab/main/mac_run_ddsl.sh`
+- Inspect the script to ensure you are happy with the default behaviour/settings, or amend as required (see section 3.5 - About the run scripts)
+- Make the script executable:  
+  - `chmod 755 mac_run_ddsl.sh`
+- Run the Data Science Lab
+  - `./mac_run_ddsl.sh`
 
 ### 3.2 - Win usage:
 
@@ -82,7 +82,7 @@ The below has the following options / disclaimers:
 - YOUR_LOCAL_MOUNT_PATH = e.g. `$HOME/rstudio` or `C:\...\Documents\...\rstudio` (or whatever you wish to mount it)
 - DISABLE_AUTH ==> applies to the rstudio-server login.  See [rocker](https://github.com/rocker-org/rocker) if you prefer to set a password.
 
-```
+```bash
 docker run -d -p 8787:8787 -p 3838:3838 -p 8888:8888 \
               --name data_science_lab \
               -e HOST_OS="mac" \
